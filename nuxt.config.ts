@@ -1,4 +1,4 @@
-import NuxtConfiguration from '@nuxt/config'
+import NuxtConfiguration from '@nuxt/config';
 
 const config: NuxtConfiguration = {
   mode: 'spa',
@@ -10,19 +10,19 @@ const config: NuxtConfiguration = {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+        content: process.env.npm_package_description || '',
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   loading: { color: '#fff' },
-  css: [],
+  css: ['@/assets/global.scss', 'normalize.css', 'flex.css'],
   plugins: [],
   modules: ['@nuxtjs/axios'],
   axios: {},
   build: {
-    extend(config, ctx) {}
-  }
-}
+    extend(config, ctx) {},
+  },
+};
 
-export default config
+export default config;

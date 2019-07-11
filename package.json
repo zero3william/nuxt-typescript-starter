@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
+    "flex.css": "^1.1.7",
+    "normalize.css": "^8.0.1",
     "nuxt": "^2.0.0",
     "ts-node": "^8.3.0",
     "vue-property-decorator": "^8.2.1"
@@ -22,6 +24,8 @@
     "eslint-plugin-prettier": "^3.0.1",
     "nodemon": "^1.18.9",
     "prettier": "^1.16.4",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
     "tslint": "^5.18.0"
   }
 }
