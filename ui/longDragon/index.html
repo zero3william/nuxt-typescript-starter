@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ui Demo</title>
+    <link rel="stylesheet" href="../global.css" />
+    <style>
+        .flag {
+            position: absolute;
+            width: 100px;
+            max-height: 500px;
+            top: 30px;
+            left: 30px;
+            padding-top: 1rem;
+            list-style: none;
+            background: rgba(0, 0, 0, .7);
+            color: #fff;
+            font-weight: 800;
+            border-radius: 5px;
+            position: fixed;
+            z-index: -1;
+        }
+
+        .arrow_bottom {
+            position: absolute;
+            position: fixed;
+            top: 15px;
+            left: 64px;
+            cursor: pointer;
+        }
+
+        .flag li {
+            display: flex;
+            border-bottom: 2px solid hsla(0, 0%, 100%, .05);
+            padding: 18px 0;
+            align-items: center;
+        }
+
+        .flag img {
+            margin-left: 5px;
+            margin-right: 3px;
+            width: 32px;
+            height: 32px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a class="arrow_bottom"> <img src="./flag-up.png" style="width: 32px; "></a>
+    <div class="flag">
+        <li><img src="./flag-rank.png"> 排行榜</li>
+        <li><img src="./flag-long.png"> 长龙提示</li>
+        <li><img src="./flag-active.png"> 活动</li>
+        <li> <img src="./flag-Recharge.png"> 充值</li>
+        <li> <img src="./flag-withdraw.png"> 提现</li>
+        <li> <img src="./flag-record.png"> 投注记录</li>
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+
+            $(".arrow_bottom").click(function () {
+                $(".flag").toggle();
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>

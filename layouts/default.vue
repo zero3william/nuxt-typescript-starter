@@ -1,15 +1,24 @@
 <template>
   <div>
-    <Header :left="isLeftShow" :right="isRightShow" :center="computedTitle" />
+    <Header />
     <nuxt />
     <Footer />
+    <notifications
+      width="40%"
+      :max="1"
+      :duration="2000"
+      :speed="300"
+      position="top center"
+      animation-name="customAnime"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator'
 import Header from '../components/Header.vue'
-import Footer from '../components/Footer.vue'
+import Footer from '../components/IndexFooter.vue'
+import { setTimeout } from 'timers'
 
 @Component({
   components: {
@@ -18,13 +27,16 @@ import Footer from '../components/Footer.vue'
   }
 })
 export default class DefaultLayout extends Vue {
-  private title: string = ''
-  private isLeftShow: boolean = false
-  private isRightShow: boolean = false
-
-  mounted() {}
-  get computedTitle() {
-    return this.$store.state.title
+  mounted() {
+    if (this.$store.state.socket.isConnected === false) {
+      this.$notify({
+        title: '已登出',
+        text: '即将跳转至登入页面'
+      })
+      setTimeout(() => {
+        this.$router.replace('/')
+      }, 2000)
+    }
   }
 }
 </script>

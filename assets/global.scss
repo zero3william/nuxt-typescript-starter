@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
 a {
   text-decoration: none;
 }
@@ -10,12 +17,30 @@ a {
   color: #f63b46;
 }
 
-html {
-  font-size: 10px;
+.text-secondary {
+  color: #7f7f7f;
+}
+
+@media screen and (max-width: 375px) {
+  html {
+    font-size: 10px !important;
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 414px) {
+  html {
+    font-size: 11px !important;
+  }
+}
+
+@media screen and (min-width: 415px) {
+  html {
+    font-size: 12px !important;
+  }
 }
 
 body {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-family: 'PT Sans', sans-serif;
   width: 100vw;
   height: 100vh;
@@ -39,7 +64,7 @@ img {
 .page-leave-active,
 .layout-enter-active,
 .layout-leave-active {
-  transition: opacity 0.2s;
+  transition: opacity 0.1s;
 }
 
 .page-enter,
@@ -54,4 +79,58 @@ img {
 .layout-enter-to,
 .layout-leave {
   opacity: 1;
+}
+
+//custom notification
+.notifications {
+  top: calc(50% - 40px) !important;
+  .notification-wrapper {
+    position: absolute;
+    &.customAnime-enter {
+      top: 46px;
+    }
+    &.customAnime-enter-to,
+    &.customAnime-leave {
+      top: 0px;
+      opacity: 1;
+    }
+    &.customAnime-leave-to {
+      top: -46px;
+      opacity: 0;
+    }
+    .vue-notification {
+      background: rgba(0,0,0,0.6);
+      text-align: center;
+      border-left: none !important;
+      .notification-title{
+        margin-bottom:1rem;
+      }
+    }
+  }
+}
+
+
+.button {
+  background: #2888ff;
+  border: 1px solid #1c45ab;
+  text-align: center;
+  height: 38px;
+  line-height: 32px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  border-radius: 6px;
+  padding: 0px 1.4rem;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.badge {
+  background: red;
+  color: #fff;
+  border-radius: 11px;
+  height: 23px;
+  min-width: 23px;
+  padding: 3px;
 }

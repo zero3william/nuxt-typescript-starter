@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .text-primary {
+    color: #f63b46;
+  }
+  
+  .text-secondary {
+    color: #7f7f7f;
+  }
+  
+  @media screen and (max-width: 375px) {
+    html {
+      font-size: 10px !important;
+    }
+  }
+  
+  @media screen and (min-width: 376px) and (max-width: 414px) {
+    html {
+      font-size: 11px !important;
+    }
+  }
+  
+  @media screen and (min-width: 415px) {
+    html {
+      font-size: 12px !important;
+    }
+  }
+  
+  body {
+    font-size: 1.2rem;
+    font-family: 'PT Sans', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  img {
+    display: block;
+    image-orientation: from-image;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .bg-transparent {
+    background: transparent !important;
+  }
+  
+
+  

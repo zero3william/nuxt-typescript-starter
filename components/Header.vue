@@ -1,11 +1,11 @@
 <template>
   <header flex="main:justify cross:center">
     <div>
-      <div v-if="left">左侧按钮</div>
+      <i @click="$emit('back')" v-if="left" class="iconfont icon-arrow-left"></i>
     </div>
-    <div>{{center}}</div>
+    <div>{{title}}</div>
     <div>
-      <div v-if="right">右侧按钮</div>
+      <i v-if="right" class="iconfont icon-menu"></i>
     </div>
   </header>
 </template>
@@ -15,9 +15,11 @@ import { Component, Vue, Prop } from 'vue-property-decorator'
 
 @Component
 export default class Header extends Vue {
-  @Prop({ type: Boolean, required: false }) left!: false
-  @Prop({ type: String, required: false }) center!: ''
-  @Prop({ type: Boolean, required: false }) right!: false
+  private left = true
+  private right = true
+  get title() {
+    return this.$store.state.title
+  }
 }
 </script>
 
@@ -28,6 +30,10 @@ header {
   background: linear-gradient(to bottom, #f63b46, #ff335c);
   color: #fff;
   font-size: 2rem;
+  .iconfont {
+    margin: 0 1rem;
+    font-size: 2.2rem;
+  }
 }
 </style>
 
